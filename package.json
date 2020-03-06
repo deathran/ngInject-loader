@@ -1,8 +1,9 @@
 {
-    "name": "ng-inject-loader",
+    "name": "ngInject-loader",
     "version": "0.1.0",
     "description": "A webpack loader for ngInject tags",
     "main": "index.js",
+    "repository": "git@github.com:deathran/ngInject-loader.git",
     "scripts": {
         "test": "webpack && node test/loader.spec.js"
     },
@@ -12,7 +13,7 @@
         "angularjs",
         "ngInject"
     ],
-    "author": "alexander.junge",<
+    "author": "alexander.junge",
     "license": "ISC",
     "devDependencies": {
         "chai": "^4.2.0",
