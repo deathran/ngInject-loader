@@ -70,3 +70,8 @@ export const testFunction5 = function(
 ) {
     "ngInject";
 };
+
+function testFunction6(
+    testFunction6Dep1, testFunction6Dep2, testFunction6Dep3) {
+    "ngInject";
+}

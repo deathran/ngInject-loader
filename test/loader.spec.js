@@ -10,6 +10,13 @@ const shouldHaveInjections = [
     ["TestClass4Dep1", "TestClass4Dep2", "TestClass4Dep3"],
     ["TestClass5Dep1", "TestClass5Dep2", "TestClass5Dep3"],
     ["TestClass6Dep1", "TestClass6Dep2", "TestClass6Dep3"],
+    ["TestClass6Dep1", "TestClass6Dep2", "TestClass6Dep3"],
+    ["testFunction1Dep1", "testFunction1Dep2", "testFunction1Dep3"],
+    ["testFunction2Dep2", "testFunction2Dep2", "testFunction2Dep3"],
+    ["testFunction3Dep2", "testFunction3Dep2", "testFunction3Dep3"],
+    ["testFunction4Dep2", "testFunction4Dep2", "testFunction4Dep3"],
+    ["testFunction5Dep2", "testFunction5Dep2", "testFunction5Dep3"],
+    ["testFunction6Dep2", "testFunction6Dep2", "testFunction6Dep3"],
 ];
 
 expect(data).to.be.a('string');

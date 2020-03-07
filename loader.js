@@ -1,6 +1,6 @@
 const NG_INJECT_IDENTIFIER = 'ngInject';
 const CLASS_IDENTIFIER_REGEX = /\sclass\s+(\w+)/;
-const FUNCTION_IDENTIFIER_REGEX = /\sfunction\s(\w+)/;
+const FUNCTION_IDENTIFIER_REGEX = /function\s(\w+)/;
 const FUNCTION_ASSIGNMENT_REGEX = /(\w*)\W+function/;
 
 module.exports = async function(source) {
@@ -16,43 +16,55 @@ module.exports = async function(source) {
     const lineHits = getHits(allLines);
 
     let split = {};
-    lineHits.forEach(hit => {
-        for (let i = hit; i >= 0; i--) {
-            const lineContent = allLines[i];
+    try {
 
-            if (FUNCTION_IDENTIFIER_REGEX.test(lineContent) || FUNCTION_ASSIGNMENT_REGEX.test(lineContent)) {
-                let match = null;
-                if (lineContent.includes('=')) {
-                    match = FUNCTION_ASSIGNMENT_REGEX.exec(lineContent)
-                } else {
-                    match = FUNCTION_IDENTIFIER_REGEX.exec(lineContent);
-                }
+        lineHits.forEach(hit => {
+            for (let i = hit; i >= 0; i--) {
+                const lineContent = allLines[i];
 
-                const className = match[1];
-
-                split[className] = getArgumentsFromInjector(allLines, i);
-
-                break;
-            }
-
-            if (lineContent.toLowerCase().includes('constructor')) {
-                for (let j = i; j >= 0; j--) {
-                    const currentLineContent = allLines[j];
-
-                    if (CLASS_IDENTIFIER_REGEX.test(currentLineContent)) {
-                        const match = CLASS_IDENTIFIER_REGEX.exec(currentLineContent);
-                        const className = match[1];
-
-                        split[className] = getArgumentsFromInjector(allLines, i);
-
-                        break;
+                if (FUNCTION_IDENTIFIER_REGEX.test(lineContent) || FUNCTION_ASSIGNMENT_REGEX.test(lineContent)) {
+                    let match = null;
+                    if (lineContent.includes('=')) {
+                        match = FUNCTION_ASSIGNMENT_REGEX.exec(lineContent)
+                    } else {
+                        match = FUNCTION_IDENTIFIER_REGEX.exec(lineContent);
                     }
+
+                    const className = match[1];
+                    const argumentsFromInjector = getArgumentsFromInjector(allLines, i);
+
+                    if (argumentsFromInjector.length) {
+                        split[className] = argumentsFromInjector;
+                    }
+
+                    break;
                 }
 
-                break;
+                if (lineContent.toLowerCase().includes('constructor')) {
+                    for (let j = i; j >= 0; j--) {
+                        const currentLineContent = allLines[j];
+
+                        if (CLASS_IDENTIFIER_REGEX.test(currentLineContent)) {
+                            const match = CLASS_IDENTIFIER_REGEX.exec(currentLineContent);
+                            const className = match[1];
+                            const argumentsFromInjector = getArgumentsFromInjector(allLines, i);
+
+                            if (argumentsFromInjector.length) {
+                                split[className] = argumentsFromInjector;
+                            }
+
+                            break;
+                        }
+                    }
+
+                    break;
+                }
             }
-        }
-    });
+        });
+    }
+    catch (e) {
+        this.emitWarning('was not able to load "ngInit" for file');
+    }
 
     if (Object.keys(split).length) {
         for (key in split) {
@@ -121,6 +133,6 @@ function getArgumentsFromInjector(allLines, constructorPosition) {
 
     const constructorArguments = between.split(' ').join('').split(',');
 
-    return constructorArguments;
+    return constructorArguments.filter(item => item);
 
 }
