@@ -11,6 +11,7 @@ const shouldHaveInjections = [
     ["TestClass5Dep1", "TestClass5Dep2", "TestClass5Dep3"],
     ["TestClass6Dep1", "TestClass6Dep2", "TestClass6Dep3"],
     ["TestClass6Dep1", "TestClass6Dep2", "TestClass6Dep3"],
+    ["TestClass7Dep1", "TestClass7Dep2", "TestClass7Dep3"],
     ["testFunction1Dep1", "testFunction1Dep2", "testFunction1Dep3"],
     ["testFunction2Dep2", "testFunction2Dep2", "testFunction2Dep3"],
     ["testFunction3Dep2", "testFunction3Dep2", "testFunction3Dep3"],

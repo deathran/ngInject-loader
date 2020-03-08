@@ -43,6 +43,17 @@ export class TestClass6 {
     }
 }
 
+export default class TestClass7 {
+
+    constructor(
+        TestClass7Dep1,
+        TestClass7Dep2,
+        TestClass7Dep3
+    ) {
+        "ngInject";
+    }
+}
+
 export function testFunction1(testFunction1Dep1, testFunction1Dep2, testFunction1Dep3) {
     "ngInject";
 }
