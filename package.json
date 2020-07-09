@@ -5,7 +5,7 @@
     "main": "loader.js",
     "repository": "git@github.com:deathran/ngInject-loader.git",
     "scripts": {
-        "test": "webpack && node test/loader.spec.js"
+        "test": "webpack && mocha test/loader.spec.js"
     },
     "keywords": [
         "webpack",
@@ -17,6 +17,7 @@
     "license": "ISC",
     "devDependencies": {
         "chai": "^4.2.0",
+        "mocha": "^8.0.1",
         "webpack": "^4.42.0",
         "webpack-cli": "^3.3.11"
     }

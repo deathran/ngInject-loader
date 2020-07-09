@@ -63,7 +63,7 @@ module.exports = async function(source) {
         });
     }
     catch (e) {
-        this.emitWarning('was not able to load "ngInit" for file');
+        this.emitWarning('was not able to load "ngInject" for file');
     }
 
     if (Object.keys(split).length) {
