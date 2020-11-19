@@ -14,6 +14,7 @@ const shouldHaveInjections = [
     ["TestClass6Dep1", "TestClass6Dep2", "TestClass6Dep3"],
     ["TestClass7Dep1", "TestClass7Dep2", "TestClass7Dep3"],
     ["TestClass8Dep1", "TestClass8Dep2", "TestClass8Dep3"],
+    ["TestClass9Dep1", "TestClass9Dep2", "TestClass9Dep3"],
     ["testFunction1Dep1", "testFunction1Dep2", "testFunction1Dep3"],
     ["testFunction2Dep1", "testFunction2Dep2", "testFunction2Dep3"],
     ["testFunction3Dep1", "testFunction3Dep2", "testFunction3Dep3"],
@@ -22,6 +23,7 @@ const shouldHaveInjections = [
     ["testFunction6Dep1", "testFunction6Dep2", "testFunction6Dep3"],
     ["testFunction7Dep1", "testFunction7Dep2", "testFunction7Dep3"],
     ["testFunction8Dep1", "testFunction8Dep2", "testFunction8Dep3"],
+    ["testFunction9Dep1", "testFunction9Dep2", "testFunction9Dep3"],
 ];
 
 describe('Check if the compiled file has been rendered correctly', function() {

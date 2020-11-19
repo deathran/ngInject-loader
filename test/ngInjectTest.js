@@ -66,6 +66,17 @@ export class TestClass8 {
     }
 }
 
+// Dependencies indented with tabs
+export class TestClass9 {
+    constructor(
+		TestClass9Dep1,
+		TestClass9Dep2,
+		TestClass9Dep3
+    ) {
+        "ngInject";
+    }
+}
+
 export function testFunction1(testFunction1Dep1, testFunction1Dep2, testFunction1Dep3) {
     "ngInject";
 }
@@ -81,6 +92,7 @@ export function testFunction2(
 export const testFunction3 = function(testFunction3Dep1, testFunction3Dep2, testFunction3Dep3) {
     "ngInject";
 };
+
 export const testFunction4 = function(
     testFunction4Dep1,
     testFunction4Dep2,
@@ -88,6 +100,7 @@ export const testFunction4 = function(
 ) {
     "ngInject";
 };
+
 export const testFunction5 = function(
     testFunction5Dep1, testFunction5Dep2, testFunction5Dep3
 ) {
@@ -110,6 +123,15 @@ export function testFunction8(
     testFunction8Dep1,
     testFunction8Dep2,
     testFunction8Dep3,
+) {
+    "ngInject";
+}
+
+// Indented with tabs
+export function testFunction9(
+	testFunction9Dep1,
+	testFunction9Dep2,
+	testFunction9Dep3
 ) {
     "ngInject";
 }
