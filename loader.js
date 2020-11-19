@@ -131,7 +131,7 @@ function getArgumentsFromInjector(allLines, constructorPosition) {
         indexOfEnd - indexOfStart - 1
     );
 
-    const constructorArguments = between.split(' ').join('').split(',');
+    const constructorArguments = between.replace(/\s/g, '').split(',');
 
     return constructorArguments.filter(item => item);
 
