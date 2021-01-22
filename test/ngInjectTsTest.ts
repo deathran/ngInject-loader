@@ -61,6 +61,16 @@ export class TsTestClass7 {
     }
 }
 
+export class TsTestClass8 {
+    constructor(
+        private TsTestClass8Dep1: { a: string, b: Object },
+        private TsTestClass8Dep2: { a: string[], b: Promise<any> },
+        private TsTestClass8Dep3: { test123: number[] }
+    ) {
+        'ngInject';
+    }
+}
+
 export function tsTestFunction1(tsTestFunction1Dep1, tsTestFunction1Dep2, tsTestFunction1Dep3) {
     "ngInject";
 }
@@ -70,5 +80,12 @@ export function tsTestFunction2(tsTestFunction2Dep1: any, tsTestFunction2Dep2: P
 }
 
 export function tsTestFunction3(tsTestFunction3Dep1: any, tsTestFunction3Dep2: Promise<any>, tsTestFunction3Dep3: string[]) {
+    "ngInject";
+}
+
+export function tsTestFunction4(
+    tsTestFunction4Dep1: { a: string, b: any },
+    tsTestFunction4Dep2: { a: Promise<any> },
+    tsTestFunction4Dep3: { a: Promise<any>, b: number[] }) {
     "ngInject";
 }

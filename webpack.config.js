@@ -24,7 +24,8 @@ module.exports = {
                 test: /\.(js|ts)x?$/,
                 use: [
                     path.resolve('./loader.js')
-                ]
+                ],
+                exclude: /node_modules/
             }
         ]
     },

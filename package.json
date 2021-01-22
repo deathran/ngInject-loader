@@ -1,6 +1,6 @@
 {
     "name": "ngInject-loader",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "A webpack loader for ngInject tags",
     "main": "loader.js",
     "repository": "git@github.com:deathran/ngInject-loader.git",

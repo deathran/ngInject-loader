@@ -131,7 +131,7 @@ function getArgumentsFromInjector(allLines, constructorPosition) {
         indexOfEnd - indexOfStart - 1
     );
 
-    const constructorArguments = between.replace(/(\s|private|public|protected|:\w?[^,]+)/g, '').split(',');
+    const constructorArguments = between.replace(/(\s|private|public|protected|:\W?({[^}]*|[^,])+)/g, '').split(',');
 
     return constructorArguments.filter(item => item);
 
