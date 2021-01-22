@@ -24,6 +24,16 @@ const shouldHaveInjections = [
     ["testFunction7Dep1", "testFunction7Dep2", "testFunction7Dep3"],
     ["testFunction8Dep1", "testFunction8Dep2", "testFunction8Dep3"],
     ["testFunction9Dep1", "testFunction9Dep2", "testFunction9Dep3"],
+    ["TsTestClass1Dep1", "TsTestClass1Dep2", "TsTestClass1Dep3"],
+    ["TsTestClass2Dep1", "TsTestClass2Dep2", "TsTestClass2Dep3"],
+    ["TsTestClass3Dep1", "TsTestClass3Dep2", "TsTestClass3Dep3"],
+    ["TsTestClass4Dep1", "TsTestClass4Dep2", "TsTestClass4Dep3"],
+    ["TsTestClass5Dep1", "TsTestClass5Dep2", "TsTestClass5Dep3"],
+    ["TsTestClass6Dep1", "TsTestClass6Dep2", "TsTestClass6Dep3", "TsTestClass6Dep4"],
+    ["TsTestClass7Dep1", "TsTestClass7Dep2", "TsTestClass7Dep3"],
+    ["tsTestFunction1Dep1", "tsTestFunction1Dep2", "tsTestFunction1Dep3"],
+    ["tsTestFunction2Dep1", "tsTestFunction2Dep2", "tsTestFunction2Dep3"],
+    ["tsTestFunction3Dep1", "tsTestFunction3Dep2", "tsTestFunction3Dep3"],
 ];
 
 describe('Check if the compiled file has been rendered correctly', function() {
@@ -40,7 +50,7 @@ describe('Check if the compiled file has been rendered correctly', function() {
                 const string = row.join("\",\"");
                 wantedString += string + '\"';
 
-                const regexp = new RegExp("\\.\\$inject=\\[.*" + wantedString + ".*\\]", 'g');
+                const regexp = new RegExp("\\.\\$inject=\\[\\S*" + wantedString + "\\S*\\]", 'g');
 
                 expect(data).to.match(regexp);
 
