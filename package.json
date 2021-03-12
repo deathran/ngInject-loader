@@ -1,9 +1,12 @@
 {
-    "name": "ngInject-loader",
+    "name": "@deathran/nginject-loader",
     "version": "0.2.1",
     "description": "A webpack loader for ngInject tags",
     "main": "loader.js",
-    "repository": "git@github.com:deathran/ngInject-loader.git",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/deathran/ngInject-loader.git"
+    },
     "scripts": {
         "test": "webpack && mocha test/loader.spec.js"
     },
@@ -22,5 +25,13 @@
         "typescript": "^4.1.3",
         "webpack": "^4.42.0",
         "webpack-cli": "^3.3.11"
-    }
+    },
+    "bugs": {
+        "url": "https://github.com/deathran/ngInject-loader/issues"
+    },
+    "homepage": "https://github.com/deathran/ngInject-loader#readme",
+    "directories": {
+        "test": "test"
+    },
+    "dependencies": {}
 }
