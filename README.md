@@ -11,9 +11,9 @@ module: {
         rules: [
             {
                 test: /\.(js|ts)x?$/,
-                use: [
-                    path.resolve('./loader.js')
-                ],
+                use: [{
+			loader: '@deathran/nginject-loader'
+		}],
                 exclude: /node_modules/
             }
         ]
