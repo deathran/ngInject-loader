@@ -71,6 +71,28 @@ export class TsTestClass8 {
     }
 }
 
+// Test readonly
+export class TsTestClass9 {
+    constructor(
+        readonly TsTestClass9Dep1: any,
+        readonly TsTestClass9Dep2: any,
+        readonly TsTestClass9Dep3: any
+    ) {
+        'ngInject';
+    }
+}
+
+// test private readonly
+export class TsTestClass10 {
+    constructor(
+        private readonly TsTestClass10Dep1: any,
+        private readonly TsTestClass10Dep2: any,
+        private readonly TsTestClass10Dep3: any
+    ) {
+        'ngInject';
+    }
+}
+
 export function tsTestFunction1(tsTestFunction1Dep1, tsTestFunction1Dep2, tsTestFunction1Dep3) {
     "ngInject";
 }

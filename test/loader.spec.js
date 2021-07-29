@@ -32,6 +32,8 @@ const shouldHaveInjections = [
     ["TsTestClass6Dep1", "TsTestClass6Dep2", "TsTestClass6Dep3", "TsTestClass6Dep4"],
     ["TsTestClass7Dep1", "TsTestClass7Dep2", "TsTestClass7Dep3"],
     ["TsTestClass8Dep1", "TsTestClass8Dep2", "TsTestClass8Dep3"],
+    ["TsTestClass9Dep1", "TsTestClass9Dep2", "TsTestClass9Dep3"],
+    ["TsTestClass10Dep1", "TsTestClass10Dep2", "TsTestClass10Dep3"],
     ["tsTestFunction1Dep1", "tsTestFunction1Dep2", "tsTestFunction1Dep3"],
     ["tsTestFunction2Dep1", "tsTestFunction2Dep2", "tsTestFunction2Dep3"],
     ["tsTestFunction3Dep1", "tsTestFunction3Dep2", "tsTestFunction3Dep3"],
